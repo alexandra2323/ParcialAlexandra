@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Formulario de Inscripción Universitaria</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4e4f9;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-weight: bold;
+            color: #4a148c;
+            text-align: center;
+        }
+        h3 {
+            color: #4a148c;
+            margin-bottom: 10px;
+        }
+        .container {
+            width: 60%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"], input[type="tel"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .form-footer {
+            text-align: center;
+        }
+        .required:after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Formulario de Inscripción Universitaria</h1>
+
+        <form id="inscripcionForm">
+            <div class="form-group">
+                <label for="carrera" class="required">¿Qué carrera desea estudiar?</label>
+                <select id="carrera" name="carrera" required>
+                    <option value="" disabled selected>Seleccione una carrera</option>
+                    <option value="Administración de empresas">Administración de empresas</option>
+                    <option value="Bacteriología">Bacteriología</option>
+                    <option value="Contaduria pública">Contaduria pública</option>
+                    <option value="derecho">Derecho</option>
+                    <option value="Enfermeria">Enfermeria</option>
+                    <option value="Ingeniería en sistemas">Ingeniería en sistemas</option>
+                    <option value="Instrumentación quirurgica">Instrumentación quirurgica</option>
+                    <option value="Licenciatura en educación infantil">Licenciatura en educación infantil</option>
+                    <option value="medicina">Medicina</option>
+                    <option value="Odontología">Odontología</option>
+                    <option value="Tecnología en atención prehospitalaria">Tecnología en atención prehospitalaria</option>
+                    <option value="Teconología es estetica y cosmetica">Teconología es estetica y cosmetica</option>
+                    <option value="Tecnología en mecanica dental">Tecnología en mecanica dental</option>
+                    <option value="Trabajo social">Trabajo social</option>
+                </select>
+            </div>
+
+            <h3>Información Personal</h3>
+            <div class="form-group">
+                <label for="nombre" class="required">Nombre Completo</label>
+                <input 
+                    type="text" 
+                    id="nombre" 
+                    name="nombre" 
+                    placeholder="Ej. Juan Pérez" 
+                    pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" 
+                    title="El nombre solo puede contener letras y espacios" 
+                    required>
+            </div>
+
+            <div class="form-group">
+    <label for="documento" class="required">Número de Documento de Identificación</label>
+    <input 
+        type="text" 
+        id="documento" 
+        name="documento" 
+        placeholder="Ej. 123456789" 
+        pattern="[0-9]+" 
+        title="El número de identificación solo puede contener dígitos del 0 al 9" 
+        maxlength="15" 
+        required>
+</div>
+
+
+            <div class="form-group">
+                <label for="tipoDocumento" class="required">Tipo de Documento</label>
+                <select id="tipoDocumento" name="tipoDocumento" required>
+                    <option value="CC">Cédula de Ciudadanía (CC)</option>
+                    <option value="TI">Tarjeta de Identidad (TI)</option>
+                    <option value="pasaporte">Pasaporte de Extranjería</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="estadoCivil" class="required">Estado Civil</label>
+                <select id="estadoCivil" name="estadoCivil" required>
+                    <option value="soltero">Soltero</option>
+                    <option value="casado">Casado</option>
+                    <option value="divorciado">Divorciado</option>
+                    <option value="viudo">Viudo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="sexo" class="required">Sexo Biológico</label>
+                <select id="sexo" name="sexo" required>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono" class="required">Teléfono</label>
+                <input 
+                    type="text" 
+                    id="telefono" 
+                    name="telefono" 
+                    placeholder="Ej. 3012345678" 
+                    pattern="[0-9]{10}" 
+                    title="El número de teléfono debe contener exactamente 10 dígitos numéricos" 
+                    maxlength="10" 
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="direccion" class="required">Dirección Residencial</label>
+                <input type="text" id="direccion" name="direccion" placeholder="Ej. Calle Falsa 123" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pais" class="required">País</label>
+                <input type="text" id="pais" name="pais" placeholder="Ej. Colombia" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo se permiten letras y espacios" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ciudad" class="required">Ciudad</label>
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ej. Bogotá" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+" title="Solo se permiten letras y espacios" required>
+            </div>
+
+            <div class="form-group">
+                <label for="hijos">¿Tiene hijos?</label>
+                <select id="hijos" name="hijos">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="discapacidad">¿Cuenta con alguna discapacidad?</label>
+                <select id="discapacidad" name="discapacidad">
+                    <option value="no">No</option>
+                    <option value="visual">Visual</option>
+                    <option value="auditiva">Auditiva</option>
+                    <option value="motora">Motora</option>
+                    <option value="otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group" id="otrosDiscapacidad">
+                <label for="detalleDiscapacidad">Especifique:</label>
+                <textarea id="detalleDiscapacidad" name="detalleDiscapacidad" placeholder="Detalle su discapacidad aquí"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="trabaja">¿Actualmente trabaja?</label>
+                <select id="trabaja" name="trabaja">
+                    <option value="no">No</option>
+                    <option value="si">Sí</option>
+                </select>
+            </div>
+
+            <div class="form-footer">
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('discapacidad').addEventListener('change', function() {
+            document.getElementById('otrosDiscapacidad').style.display = this.value === 'otro' ? 'block' : 'none';
+        });
+
+        document.getElementById('hijos').addEventListener('change', function() {
+            document.getElementById('menuDiscapacidad').style.display = this.value === 'si' ? 'block' : 'none';
+        });
+
+        document.getElementById('inscripcionForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Formulario enviado con éxito');
+        });
+    </script>
+
+</body>
+</html>
+
+
